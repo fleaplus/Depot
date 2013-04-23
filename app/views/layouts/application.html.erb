@@ -24,6 +24,9 @@
         <li><a href="http://www.../contact">Contact</a></li>
       </ul>
       <p><%= @time %></p>
+      <% if session[:counter] > 4 %>
+        <p>You have accessed this page <%= session[:counter]; pluralize(session[:counter], 'time') %>.</p>
+      <% end %>
     </div>
     <div id="main">
       <%= yield %>
